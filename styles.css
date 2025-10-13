@@ -1,0 +1,163 @@
+/* Reset */
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #fff9f9;
+  color: #333;
+}
+
+/* Navbar */
+header {
+  background: #ff6f91;
+  padding: 15px 30px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand img {
+  height: 60px; border-radius: 6px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+.logo span {
+  color: #f1f0ee;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  border-bottom: 2px solid #ffe57f;
+  padding-bottom: 2px;
+}
+
+/* Hero */
+.hero {
+  background: url("images/hero-bg.png") center/cover no-repeat;
+  padding: 120px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+.hero h1, .hero p, .hero a {
+  position: relative;
+  z-index: 2;
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.btn {
+  background: #ff6f91;
+  padding: 10px 25px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.btn:hover {
+  background: #e65c7a;
+}
+
+/* Sections */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin: 40px 0 20px;
+  color: #333;
+}
+
+/* Health Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px 40px;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 15px;
+}
+.card-content h3 {
+  margin-bottom: 10px;
+  color: #090909;
+}
+
+/* About */
+.about {
+  padding: 40px 20px;
+  background: #fce4ec;
+  text-align: center;
+}
+
+/* Contact */
+.contact {
+  padding: 40px 20px;
+  text-align: center;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+.contact input, .contact textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Footer */
+footer {
+  background: #ff6f91;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  margin-top: 30px;
+}

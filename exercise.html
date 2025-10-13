@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise & Yoga – SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff9e6; /* light yellow background */
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      background: #ffef5b; /* primary yellow */
+      color: #333;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      background: rgba(255,255,255,0.5);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    header a:hover {
+      background: rgba(255,255,255,0.8);
+    }
+    .page-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+      gap: 20px;
+    }
+
+    .sidebar {
+      width: 200px;
+      flex-shrink: 0;
+      background: #fff3c4; /* softer yellow for sidebar */
+      border-radius: 10px;
+      padding: 15px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+    .sidebar h3 {
+      font-size: 16px;
+      color: #a67800;
+      margin-bottom: 10px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-size: 14px;
+    }
+    .sidebar a:hover {
+      background: #f7e08d; /* hover yellow */
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: #a67800; /* dark golden */
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    ul.list {
+      list-style: none;
+      padding: 0;
+    }
+    ul.list li {
+      margin: 6px 0;
+      padding-left: 22px;
+      position: relative;
+    }
+    ul.list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #f7c948; /* bullet color */
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 15px;
+      background: #f7c948;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #e0b200; /* deeper yellow on hover */
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      background: #fff3c4;
+      margin-top: 40px;
+    }
+
+    @media(max-width:768px){
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        position: static;
+      }
+      .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .sidebar h3 {display:none;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="page-title">Exercise & Yoga</div>
+    <a href="/index.html">← Back to Home</a>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#cardio">Cardio</a></li>
+        <li><a href="#yoga">Yoga</a></li>
+        <li><a href="#simpleexercises">Simple Exercises</a></li>
+        <li><a href="#zumba">Zumba</a></li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+      <section id="cardio">
+        <h2>🏃 Cardio Workouts</h2>
+        <div class="card">
+          <p>Boost stamina and heart health with these cardio routines:</p>
+          <ul class="list">
+            <li>Beginner HIIT session (15 mins)</li>
+            <li>Jump rope warm-ups</li>
+            <li>Brisk indoor walking routines</li>
+          </ul>
+          <a href="https://www.youtube.com/results?search_query=cardio+workout+for+beginners" target="_blank" class="btn">Cardio Videos</a>
+        </div>
+      </section>
+
+      <section id="yoga">
+        <h2>🧘 Yoga & Flexibility</h2>
+        <div class="card">
+          <p>Improve flexibility and calm your mind with guided yoga sessions:</p>
+          <ul class="list">
+            <li>Morning sun salutation</li>
+            <li>Yoga for back pain relief</li>
+            <li>Bedtime gentle yoga</li>
+          </ul>
+          <a href="https://www.youtube.com/results?search_query=yoga+for+beginners" target="_blank" class="btn">Yoga Sessions</a>
+        </div>
+      </section>
+
+      <section id="simpleexercises">
+        <h2>💪 Simple Exercises</h2>
+        <div class="card">
+          <p>Quick, no-equipment exercises to stay active anywhere:</p>
+          <ul class="list">
+            <li>Squats & lunges</li>
+            <li>Push-ups & planks</li>
+            <li>Stretching breaks</li>
+          </ul>
+          <a href="https://www.youtube.com/results?search_query=simple+home+exercises" target="_blank" class="btn">Try Now</a>
+        </div>
+      </section>
+
+      <section id="zumba">
+        <h2>💃 Zumba Dance</h2>
+        <div class="card">
+          <p>Fun dance workouts to burn calories and lift your mood:</p>
+          <ul class="list">
+            <li>Latin dance cardio</li>
+            <li>Zumba for weight loss</li>
+            <li>Dance along with upbeat music</li>
+          </ul>
+          <a href="https://www.youtube.com/results?search_query=zumba+workout" target="_blank" class="btn">Zumba Playlists</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 SakhiCare | Exercise & Yoga Resources
+  </footer>
+
+</body>
+</html>

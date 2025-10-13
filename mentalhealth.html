@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health – SakhiCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6f8ff;
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      background: #6a5acd;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      background: rgba(255,255,255,0.2);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    header a:hover {
+      background: rgba(255,255,255,0.35);
+    }
+    .page-title { font-size: 20px; font-weight: 600; }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+      gap: 20px;
+    }
+
+    .sidebar {
+      width: 200px;
+      flex-shrink: 0;
+      background: #ecebff;
+      border-radius: 10px;
+      padding: 15px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+    .sidebar h3 { font-size: 16px; color: #4b3cb5; margin-bottom: 10px; }
+    .sidebar ul { list-style: none; padding: 0; }
+    .sidebar li { margin-bottom: 10px; }
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-size: 14px;
+    }
+    .sidebar a:hover { background: #d8d6ff; }
+
+    .content { flex: 1; }
+    section { margin-bottom: 40px; }
+    section h2 { font-size: 1.8rem; color: #4b3cb5; margin-bottom: 15px; }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    ul.list { list-style: none; padding: 0; }
+    ul.list li {
+      margin: 6px 0;
+      padding-left: 22px;
+      position: relative;
+    }
+    ul.list li::before { content: "•"; position: absolute; left: 0; color: #6a5acd; }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 15px;
+      background: #6a5acd;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 14px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .btn:hover { background: #5947b8; }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      background: #ecebff;
+      margin-top: 40px;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    @media(max-width:768px){
+      .container { flex-direction: column; }
+      .sidebar { width: 100%; display: flex; gap: 10px; position: static; }
+      .sidebar ul { display: flex; flex-wrap: wrap; gap: 10px; }
+      .sidebar h3 { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="page-title">Mental Health Resources</div>
+  <a href="/index.html">← Back to Home</a>
+</header>
+
+<div class="container">
+  <div class="sidebar">
+    <h3>Explore</h3>
+    <ul>
+      <li><a href="#meditation">Meditation</a></li>
+      <li><a href="#depressiontest">Depression Test</a></li>
+      <li><a href="#musictherapy">Music Therapy</a></li>
+      <li><a href="#books">Self-Help Books</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+
+    <section id="meditation">
+      <h2>🧘 Meditation & Mindfulness</h2>
+      <div class="card">
+        <p>Practice short, guided meditations to relax your mind and improve focus:</p>
+        <ul class="list">
+          <li>Morning breathing exercise (5 mins)</li>
+          <li>Body-scan before bed</li>
+          <li>Mindful journaling</li>
+        </ul>
+        <a href="https://www.youtube.com/results?search_query=guided+meditation" target="_blank" class="btn">Guided Sessions</a>
+      </div>
+    </section>
+
+    <section id="depressiontest">
+      <h2>📝 Depression Self-Check</h2>
+      <div class="card">
+        <p>Take a short, anonymous screening to reflect on your mental health (not a diagnosis):</p>
+        <button id="takeTestBtn" class="btn">Take Test</button>
+      </div>
+    </section>
+
+    <section id="musictherapy">
+      <h2>🎵 Music Therapy</h2>
+      <div class="card">
+        <p>Soothing playlists can reduce anxiety and uplift your mood:</p>
+        <ul class="list">
+          <li>Instrumental & Lo-fi beats for focus</li>
+          <li>Nature & rain sounds for sleep</li>
+          <li>Positive affirmations songs</li>
+        </ul>
+        <a href="https://open.spotify.com/playlist/37i9dQZF1DWVFeEut75IAL" target="_blank" class="btn">Relaxing Playlists</a>
+      </div>
+    </section>
+
+    <section id="books">
+      <h2>📚 Self-Help Books</h2>
+      <div class="card">
+        <p>Recommended reads for mental wellness:</p>
+        <ul class="list">
+          <li>The Power of Now – Eckhart Tolle</li>
+          <li>Feeling Good – David Burns</li>
+          <li>Atomic Habits – James Clear</li>
+        </ul>
+        <a href="https://www.goodreads.com/shelf/show/mental-health" target="_blank" class="btn">More Books</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 SakhiCare | Mental Health Resources
+</footer>
+
+<!-- Modal -->
+<div id="testModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>📝 Depression Self-Check</h2>
+    <p>Answer honestly to reflect on your mental health. This is <b>not a diagnosis</b>.</p>
+    <form id="depressionForm">
+      <!-- PHQ-9 Questions -->
+      <div>
+        <label>1. Little interest or pleasure in doing things?</label><br>
+        <select name="q1" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>2. Feeling down, depressed, or hopeless?</label><br>
+        <select name="q2" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>3. Trouble falling or staying asleep, or sleeping too much?</label><br>
+        <select name="q3" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>4. Feeling tired or having little energy?</label><br>
+        <select name="q4" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>5. Poor appetite or overeating?</label><br>
+        <select name="q5" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>6. Feeling bad about yourself — or that you are a failure or have let yourself or your family down?</label><br>
+        <select name="q6" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>7. Trouble concentrating on things, such as reading or watching TV?</label><br>
+        <select name="q7" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>8. Moving/speaking slowly that others noticed? Or opposite — very restless?</label><br>
+        <select name="q8" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+      <div>
+        <label>9. Thoughts that you would be better off dead, or hurting yourself?</label><br>
+        <select name="q9" required>
+          <option value="0">Not at all</option>
+          <option value="1">Several days</option>
+          <option value="2">More than half the days</option>
+          <option value="3">Nearly every day</option>
+        </select>
+      </div><br>
+
+      <button type="submit" class="btn">Submit Test</button>
+      <button type="button" id="resetTest" class="btn" style="background:#ccc; color:#333; margin-left:10px;">Restart Test</button>
+    </form>
+
+    <div id="result" style="margin-top:20px; font-weight:600; color:#4b3cb5;"></div>
+    <div id="progressContainer" style="margin-top:15px; background:#eee; border-radius:8px; height:20px; width:100%; display:none;">
+      <div id="progressBar" style="height:100%; width:0%; border-radius:8px; text-align:center; color:white; font-size:12px; line-height:20px;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const takeTestBtn = document.getElementById("takeTestBtn");
+  const modal = document.getElementById("testModal");
+  const closeBtn = document.querySelector(".close");
+  const form = document.getElementById("depressionForm");
+  const resultDiv = document.getElementById("result");
+  const progressBar = document.getElementById("progressBar");
+  const progressContainer = document.getElementById("progressContainer");
+  const resetBtn = document.getElementById("resetTest");
+
+  takeTestBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  });
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    let formData = new FormData(form);
+    let score = 0;
+    for (let [key, value] of formData.entries()) score += parseInt(value);
+
+    let message = "";
+    if(score <= 4) message = "✅ Minimal or no depression symptoms.";
+    else if(score <= 9) message = "🙂 Mild depression symptoms. Try self-care, meditation, or talking with loved ones.";
+    else if(score <= 14) message = "⚠️ Moderate depression symptoms. Consider reaching out to a counselor or doctor.";
+    else if(score <= 19) message = "⚠️ Moderately severe symptoms. Strongly consider professional help.";
+    else message = "🚨 Severe depression symptoms. Please seek professional help immediately.";
+
+    resultDiv.innerHTML = `Your Score: <b>${score}</b> / 27<br>${message}`;
+    let percentage = (score / 27) * 100;
+    progressContainer.style.display = "block";
+    progressBar.style.width = percentage + "%";
+    progressBar.innerHTML = Math.round(percentage) + "%";
+
+    if(score <= 4) progressBar.style.background = "#4caf50";
+    else if(score <= 9) progressBar.style.background = "#8bc34a";
+    else if(score <= 14) progressBar.style.background = "#ffc107";
+    else if(score <= 19) progressBar.style.background = "#ff9800";
+    else progressBar.style.background = "#f44336";
+  });
+
+  resetBtn.addEventListener("click", function(){
+    form.reset();
+    resultDiv.innerHTML = "";
+    progressBar.style.width = "0%";
+    progressBar.innerHTML = "";
+    progressContainer.style.display = "none";
+  });
+</script>
+</body>
+</html>

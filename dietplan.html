@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women’s Diet Plans</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fdf6f9;
+      color: #333;
+    }
+    /* Back to Home Button */
+    .back-home {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #d6336c;
+      color: #fff;
+      padding: 10px 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back-home:hover {
+      background: #a61e4d;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #d6336c;
+      margin-bottom: 15px;
+    }
+    .intro {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .selector {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #d6336c;
+    }
+    .diet-box {
+      display: none;
+      text-align: center;
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 20px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .diet-box img {
+      max-width: 300px;
+      margin: 15px auto;
+      display: block;
+      border-radius: 15px;
+    }
+    .diet-box h3 {
+      color: #b91c1c;
+    }
+    ul {
+      text-align: left;
+      margin: 15px auto;
+      display: inline-block;
+    }
+    .meal-plan {
+      margin-top: 20px;
+    }
+    .meal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    .meal-table th, .meal-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    .meal-table th {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Home Button -->
+  <a href="index.html" class="back-home">⬅ Back to Home</a>
+
+  <h2 class="section-title">Women’s Diet Plans</h2>
+  <p class="intro">Select your age group to explore diet tips and a sample meal plan with images.</p>
+
+  <!-- Age Group Selector -->
+  <div class="selector">
+    <label for="ageGroup"><b>Choose Age Group:</b></label>
+    <select id="ageGroup">
+      <option value="">-- Select --</option>
+      <option value="teenage">Teenage Girls (13–19)</option>
+      <option value="young">Young Women (20–35)</option>
+      <option value="pregnancy">Pregnancy & Motherhood</option>
+      <option value="working">Working Women</option>
+      <option value="menopause">Menopause & 50+</option>
+    </select>
+  </div>
+
+  <!-- Teenage -->
+  <div id="teenage" class="diet-box">
+    <h3>Teenage Girls (13–19 years)</h3>
+    <img src="images/teenage.jpg" alt="Teenage Diet">
+    <p><b>Focus:</b> Growth, bone strength, and energy for studies & activities.</p>
+    <ul>
+      <li>Calcium-rich foods: milk, yogurt, ragi</li>
+      <li>Iron sources: spinach, jaggery, lentils</li>
+      <li>Healthy snacks: fruits, sprouts, nuts</li>
+    </ul>
+    <div class="meal-plan">
+      <h2 class="section-title">Daily Meal Plan</h2>
+      <table class="meal-table">
+        <thead><tr><th>Time</th><th>Meal</th><th>Options</th></tr></thead>
+        <tbody>
+          <tr><td>🌅 Morning</td><td>Milk + almonds</td><td>1 glass milk + 5 almonds</td></tr>
+          <tr><td>🍳 Breakfast</td><td>Energy meal</td><td>Poha / Vegetable paratha</td></tr>
+          <tr><td>🥤 Snack</td><td>Fruit</td><td>Banana / Apple</td></tr>
+          <tr><td>🍲 Lunch</td><td>Balanced plate</td><td>2 chapati, dal, sabji, curd</td></tr>
+          <tr><td>☕ Evening</td><td>Snack</td><td>Sprouts / Sandwich</td></tr>
+          <tr><td>🥗 Dinner</td><td>Light meal</td><td>Khichdi / Idli Sambhar</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Young -->
+  <div id="young" class="diet-box">
+    <h3>Young Women (20–35 years)</h3>
+    <img src="images/young.jpg" alt="Young Women Diet">
+    <p><b>Focus:</b> Energy, hormonal balance, and fitness.</p>
+    <ul>
+      <li>Protein: eggs, fish, pulses, tofu</li>
+      <li>Iron & folic acid: leafy veggies, beetroot</li>
+      <li>Hydration: 7–8 glasses water daily</li>
+    </ul>
+    <div class="meal-plan">
+      <h2 class="section-title">Daily Meal Plan</h2>
+      <table class="meal-table">
+        <thead><tr><th>Time</th><th>Meal</th><th>Options</th></tr></thead>
+        <tbody>
+          <tr><td>🌅 Morning</td><td>Detox</td><td>Lemon water + flax seeds</td></tr>
+          <tr><td>🍳 Breakfast</td><td>Protein-rich</td><td>Oats with milk / Egg toast</td></tr>
+          <tr><td>🥤 Snack</td><td>Light</td><td>Coconut water / Seasonal fruit</td></tr>
+          <tr><td>🍲 Lunch</td><td>Balanced</td><td>2 chapati, dal, sabji, salad</td></tr>
+          <tr><td>☕ Evening</td><td>Snack</td><td>Fruit chaat / Roasted chana</td></tr>
+          <tr><td>🥗 Dinner</td><td>Light meal</td><td>Soup + roti / Grilled tofu</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Pregnancy -->
+  <div id="pregnancy" class="diet-box">
+    <h3>Pregnancy & Motherhood</h3>
+    <img src="images/pregnancy_motherhood_diet.jpg" alt="Pregnancy Diet">
+    <p><b>Focus:</b> Baby’s growth, mother’s strength, and recovery.</p>
+    <ul>
+      <li>High-protein: nuts, eggs, milk</li>
+      <li>Folic acid: whole grains, spinach</li>
+      <li>Omega-3s: flaxseeds, walnuts</li>
+    </ul>
+    <div class="meal-plan">
+      <h2 class="section-title">Daily Meal Plan</h2>
+      <table class="meal-table">
+        <thead><tr><th>Time</th><th>Meal</th><th>Options</th></tr></thead>
+        <tbody>
+          <tr><td>🌅 Morning</td><td>Warm water + nuts</td><td>5 almonds, 2 walnuts</td></tr>
+          <tr><td>🍳 Breakfast</td><td>Nutritious</td><td>Oats porridge / Upma + fruit</td></tr>
+          <tr><td>🥤 Snack</td><td>Hydrating</td><td>Coconut water / Buttermilk</td></tr>
+          <tr><td>🍲 Lunch</td><td>Wholesome</td><td>Rice + dal + sabji + curd</td></tr>
+          <tr><td>☕ Evening</td><td>Snack</td><td>Fruit bowl / Roasted chana</td></tr>
+          <tr><td>🥗 Dinner</td><td>Light</td><td>Vegetable khichdi / Soup + roti</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Working -->
+  <div id="working" class="diet-box">
+    <h3>Working Women</h3>
+    <img src="images/working_women_diet.jpg" alt="Working Women Diet">
+    <p><b>Focus:</b> Energy at work, stress management, and immunity.</p>
+    <ul>
+      <li>Balanced meals: oats, quinoa, salads</li>
+      <li>Snacks: fruits, roasted chana</li>
+      <li>Limit caffeine & processed foods</li>
+    </ul>
+    <div class="meal-plan">
+      <h2 class="section-title">Daily Meal Plan</h2>
+      <table class="meal-table">
+        <thead><tr><th>Time</th><th>Meal</th><th>Options</th></tr></thead>
+        <tbody>
+          <tr><td>🌅 Morning</td><td>Hydration</td><td>Green tea + almonds</td></tr>
+          <tr><td>🍳 Breakfast</td><td>Quick</td><td>Oats with fruits / Smoothie</td></tr>
+          <tr><td>🥤 Snack</td><td>Office snack</td><td>Fruit / Energy bar</td></tr>
+          <tr><td>🍲 Lunch</td><td>Balanced</td><td>2 chapatis + dal + veggies</td></tr>
+          <tr><td>☕ Evening</td><td>Snack</td><td>Sprouts / Makhana</td></tr>
+          <tr><td>🥗 Dinner</td><td>Light</td><td>Soup + salad / Grilled fish</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Menopause -->
+  <div id="menopause" class="diet-box">
+    <h3>Menopause & 50+ Years</h3>
+    <img src="images/menopause.jpg" alt="Menopause Diet">
+    <p><b>Focus:</b> Bone health, heart health, and light digestion.</p>
+    <ul>
+      <li>Calcium & Vitamin D: dairy, sesame seeds, almonds</li>
+      <li>Heart health: olive oil, whole grains, green tea</li>
+      <li>Light, frequent meals for metabolism</li>
+    </ul>
+    <div class="meal-plan">
+      <h2 class="section-title">Daily Meal Plan</h2>
+      <table class="meal-table">
+        <thead><tr><th>Time</th><th>Meal</th><th>Options</th></tr></thead>
+        <tbody>
+          <tr><td>🌅 Morning</td><td>Warm water</td><td>Lukewarm water + sesame seeds</td></tr>
+          <tr><td>🍳 Breakfast</td><td>Light</td><td>Vegetable oats / Idli sambhar</td></tr>
+          <tr><td>🥤 Snack</td><td>Hydration</td><td>Green tea / Fruit</td></tr>
+          <tr><td>🍲 Lunch</td><td>Wholesome</td><td>Rice + dal + sabji + salad</td></tr>
+          <tr><td>☕ Evening</td><td>Snack</td><td>Roasted almonds / Sprouts</td></tr>
+          <tr><td>🥗 Dinner</td><td>Very light</td><td>Vegetable soup + khichdi</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const selectBox = document.getElementById("ageGroup");
+    const dietBoxes = document.querySelectorAll(".diet-box");
+
+    selectBox.addEventListener("change", () => {
+      dietBoxes.forEach(box => box.style.display = "none");
+      const value = selectBox.value;
+      if (value) {
+        document.getElementById(value).style.display = "block";
+      }
+    });
+  </script>
+
+</body>
+</html>

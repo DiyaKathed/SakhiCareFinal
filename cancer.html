@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cancer Awareness | SakhiCare</title>
+<style>
+  :root{
+    --bg:#f8f9fa;          /* page background */
+    --card:#ffffff;        /* main card background */
+    --card-2:#f1f3f5;      /* secondary card / video card */
+    --heading:#b3005e;     /* dark pink accent for headings */
+    --text-light:#212529;  /* dark text */
+    --muted:#6c757d;       /* muted gray text */
+    --accent:#d63384;      /* highlight buttons & important points */
+  }
+
+  html, body{
+    height:100%; margin:0;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg); color:var(--text-light);
+  }
+  .container{width:min(1000px,94%); margin:0 auto; padding:1rem 1rem 4rem}
+
+  header{display:flex; gap:1rem; align-items:center; justify-content:space-between; margin-bottom:.6rem}
+  h1{color:var(--accent); margin:.2rem 0; font-size:1.5rem}
+  p.lead{color:var(--muted); margin:.2rem 0 1rem}
+
+  .back-btn{
+    display:inline-flex; align-items:center; gap:.5rem; text-decoration:none;
+    background:var(--accent); color:#fff; padding:.55rem .9rem; border-radius:10px; font-weight:600;
+    box-shadow:0 6px 18px rgba(214,51,132,0.2);
+  }
+
+  main section{background:var(--card); padding:1rem; border-radius:12px; margin:1rem 0}
+  .cancer-card{background:var(--card-2); padding:1rem; margin:1rem 0; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+  .cancer-card h3{color:var(--heading); margin:0 0 .5rem; font-size:1.1rem}
+  .cancer-card ul{list-style:none; padding:0; margin:0}
+  .cancer-card li{margin:.35rem 0; color:var(--text-light); font-size:.95rem}
+  .muted{color:var(--muted); font-size:.9rem}
+
+  .video-row{display:grid; grid-template-columns:1fr; gap:.6rem}
+  @media(min-width:860px){ .video-row{grid-template-columns:repeat(2,1fr)} }
+
+  .video-embed{border-radius:12px; overflow:hidden; background:#000; border:2px solid rgba(0,0,0,0.05)}
+  .video-thumb{
+    position:relative; padding-bottom:56.25%; height:0; cursor:pointer; background-position:center; background-size:cover;
+    transition:transform .12s ease; display:flex; align-items:center; justify-content:center;
+  }
+  .video-thumb:focus{outline:3px solid rgba(214,51,132,0.3)}
+  .video-thumb:active{transform:scale(.995)}
+  .play-btn{
+    position:absolute; width:88px; height:88px; border-radius:999px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(180deg, rgba(214,51,132,0.95), rgba(179,0,94,0.95)); box-shadow:0 10px 30px rgba(214,51,132,0.25);
+    border:4px solid rgba(255,255,255,0.2)
+  }
+  .play-btn svg{width:36px; height:36px; margin-left:4px}
+  .video-meta{padding:.6rem 0 .2rem}
+  .video-title{font-weight:700; color:var(--text-light); margin:0 0 .35rem}
+  .video-desc{color:var(--muted); margin:0; font-size:.9rem}
+
+  .controls{display:flex; gap:.6rem; align-items:center; margin-top:.6rem; flex-wrap:wrap}
+  input[type=number]{background:var(--card-2); color:var(--text-light); border:1px solid rgba(0,0,0,0.1); padding:.6rem .8rem; border-radius:8px; width:150px}
+  button.primary{background:var(--accent); color:#fff; border:none; padding:.6rem .9rem; border-radius:8px; cursor:pointer; font-weight:600}
+  .plan{margin-top:.6rem; color:var(--text-light)}
+  ol{padding-left:1.1rem}
+  footer{margin-top:1.2rem; color:var(--muted); font-size:.9rem}
+  noscript{display:block; background:#e9ecef; padding:.8rem; border-radius:8px; margin-top:.6rem; color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <h1>💗 Cancer Awareness — SakhiCare</h1>
+      <p class="lead">Visual guides, clear actions, and working videos — mobile-friendly and offline-compatible.</p>
+    </div>
+    <a href="index.html" class="back-btn" aria-label="Back to home">⬅ Back to Home</a>
+  </header>
+
+  <main>
+    <section aria-labelledby="common-cancers">
+      <h2 id="common-cancers" style="color:var(--heading); margin:.2rem 0 0.6rem">🌸 5 Most Common Cancers in Women</h2>
+      <p class="muted">Tap a thumbnail to play the video. Each card shows symptoms, screening, prevention, and major risk factors.</p>
+
+      <!-- Breast -->
+      <div class="cancer-card" id="breast">
+        <h3>💗 Breast Cancer</h3>
+        <div class="video-row">
+          <div class="video-embed">
+            <div class="video-thumb" role="button" tabindex="0" aria-label="Play Breast Cancer video"
+                 data-video-id="srDdIbFLbJY"
+                 style="background-image:url('https://img.youtube.com/vi/srDdIbFLbJY/hqdefault.jpg')">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="11" fill="white" opacity="0.06"></circle>
+                  <path d="M10 8l6 4-6 4V8z" fill="#fff"></path>
+                </svg>
+              </span>
+            </div>
+            <noscript>
+              <p class="muted">JS disabled — <a href="https://youtu.be/srDdIbFLbJY" target="_blank" rel="noopener">Watch on YouTube</a></p>
+            </noscript>
+          </div>
+          <div class="video-meta">
+            <p class="video-title">Symptoms • Screening • Prevention</p>
+            <p class="video-desc">🔍 Lump in breast/armpit • Monthly self-check • Mammogram 40+ • ⚠ Major risks: family history, obesity</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cervical -->
+      <div class="cancer-card" id="cervical">
+        <h3>🧬 Cervical Cancer</h3>
+        <div class="video-row">
+          <div class="video-embed">
+            <div class="video-thumb" role="button" tabindex="0" aria-label="Play Cervical Cancer video"
+                 data-video-id="9m-EpupYkRg"
+                 style="background-image:url('https://img.youtube.com/vi/9m-EpupYkRg/hqdefault.jpg')">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="11" fill="white" opacity="0.06"></circle>
+                  <path d="M10 8l6 4-6 4V8z" fill="#fff"></path>
+                </svg>
+              </span>
+            </div>
+            <noscript>
+              <p class="muted">JS disabled — <a href="https://youtu.be/9m-EpupYkRg" target="_blank" rel="noopener">Watch on YouTube</a></p>
+            </noscript>
+          </div>
+          <div class="video-meta">
+            <p class="video-title">Symptoms • Screening • Prevention</p>
+            <p class="video-desc">🔍 Bleeding after sex, discharge • Pap/VIA every 3 yrs • 💉 HPV vaccine (9–26) • ⚠ Major risks: HPV, early marriage</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ovarian -->
+      <div class="cancer-card" id="ovarian">
+        <h3>🥚 Ovarian Cancer</h3>
+        <div class="video-row">
+          <div class="video-embed">
+            <div class="video-thumb" role="button" tabindex="0" aria-label="Play Ovarian Cancer video"
+                 data-video-id="bkNLSjGNCDA"
+                 style="background-image:url('https://img.youtube.com/vi/bkNLSjGNCDA/hqdefault.jpg')">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="11" fill="white" opacity="0.06"></circle>
+                  <path d="M10 8l6 4-6 4V8z" fill="#fff"></path>
+                </svg>
+              </span>
+            </div>
+            <noscript>
+              <p class="muted">JS disabled — <a href="https://youtu.be/bkNLSjGNCDA" target="_blank" rel="noopener">Watch on YouTube</a></p>
+            </noscript>
+          </div>
+          <div class="video-meta">
+            <p class="video-title">Symptoms • Screening • Prevention</p>
+            <p class="video-desc">🔍 Bloating, abdominal pain • Ultrasound & CA-125 if advised • ⚠ Major risks: family history, BRCA</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Uterine / Endometrium -->
+      <div class="cancer-card" id="uterine">
+        <h3>🌺 Uterine / Endometrial Cancer</h3>
+        <div class="video-row">
+          <div class="video-embed">
+            <div class="video-thumb" role="button" tabindex="0" aria-label="Play Uterine Cancer video"
+                 data-video-id="yY1yhoneJJQ"
+                 style="background-image:url('https://img.youtube.com/vi/yY1yhoneJJQ/hqdefault.jpg')">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="11" fill="white" opacity="0.06"></circle>
+                  <path d="M10 8l6 4-6 4V8z" fill="#fff"></path>
+                </svg>
+              </span>
+            </div>
+            <noscript>
+              <p class="muted">JS disabled — <a href="https://youtu.be/yY1yhoneJJQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
+            </noscript>
+          </div>
+          <div class="video-meta">
+            <p class="video-title">Symptoms • Screening • Prevention</p>
+            <p class="video-desc">🔍 Postmenopausal bleeding • Ultrasound + biopsy if abnormal • ⚠ Major risks: obesity, diabetes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="red-flags">
+      <h2 id="red-flags" style="color:var(--heading)">🚩 Warning Signs — See a Doctor if You Notice:</h2>
+      <ul class="muted">
+        <li>• Lump in breast or armpit, nipple discharge (esp. blood)</li>
+        <li>• Unusual vaginal bleeding (after sex, between periods, post-menopause)</li>
+        <li>• Abdominal bloating or pain for &gt;2 weeks</li>
+        <li>• Non-healing mouth ulcer (especially with tobacco use)</li>
+        <li>• Unexplained weight loss or constant fatigue</li>
+      </ul>
+      <p class="muted">Symptoms may not always mean cancer, but they must be checked.</p>
+    </section>
+
+    <section aria-labelledby="screening-planner">
+      <h2 id="screening-planner" style="color:var(--heading)">📅 Screening Planner</h2>
+      <p class="muted">Enter your age to see recommended screenings.</p>
+      <div class="controls">
+        <input id="age" type="number" min="9" max="90" placeholder="Enter your age" aria-label="Enter your age" />
+        <button class="primary" id="showPlanBtn">Show My Plan</button>
+      </div>
+      <div id="plan" class="plan" aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="bse">
+      <h2 id="bse" style="color:var(--heading)">🤲 Breast Self-Exam (BSE)</h2>
+      <p class="muted">Perform monthly. Best time: 2–3 days after your period ends.</p>
+      <ol>
+        <li>Stand before a mirror — check shape, skin, and symmetry.</li>
+        <li>Raise arms — look for dimpling or swelling.</li>
+        <li>Gently press nipple — check for discharge.</li>
+        <li>Lie down — use 3 fingers in small circles across the whole breast and armpit.</li>
+        <li>Repeat in the shower (soap helps slide your fingers).</li>
+      </ol>
+    </section>
+
+    <a href="index.html" class="back-btn" style="margin-top:.6rem">⬅ Back to Home</a>
+  </main>
+
+  <footer>
+    <p class="muted">Created for SakhiCare — share responsibly. This page is educational and does not replace medical advice.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  function makeIframe(videoId, title){
+    var src = 'https://www.youtube.com/embed/' + encodeURIComponent(videoId) + '?rel=0&modestbranding=1&playsinline=1';
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('src', src);
+    iframe.setAttribute('title', title || 'YouTube video player');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('loading', 'lazy');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.position = 'absolute';
+    iframe.style.top = '0';
+    iframe.style.left = '0';
+    return iframe;
+  }
+
+  function activateThumb(thumb){
+    var parent = thumb.parentElement;
+    if(thumb.dataset.loaded === 'true') return;
+    var id = thumb.getAttribute('data-video-id');
+    if(!id) return;
+    var iframeWrap = document.createElement('div');
+    iframeWrap.style.position = 'relative';
+    iframeWrap.style.paddingBottom = '56.25%';
+    iframeWrap.style.height = '0';
+    iframeWrap.style.overflow = 'hidden';
+    iframeWrap.style.width = '100%';
+    iframeWrap.style.background = '#000';
+    var iframe = makeIframe(id, 'Video player');
+    iframeWrap.appendChild(iframe);
+    parent.replaceChild(iframeWrap, thumb);
+    thumb.dataset.loaded = 'true';
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.video-thumb').forEach(function(t){
+      t.addEventListener('click', function(){ activateThumb(t); });
+      t.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); activateThumb(t); } });
+    });
+
+    var btn = document.getElementById('showPlanBtn');
+    var ageInput = document.getElementById('age');
+    var planDiv = document.getElementById('plan');
+
+    function buildPlan(){
+      var age = parseInt(ageInput.value,10);
+      var msg='';
+      if(isNaN(age)){ msg='<p class="muted">Please enter a valid age.</p>'; }
+      else if(age<21){ msg='<p>➡ HPV vaccination is recommended (9–14 yrs ideal; up to 26). Discuss with doctor.</p>'; }
+      else if(age>=21 && age<30){ msg='<p>➡ Cervical: Pap smear or VIA every 3 years.<br>➡ Clinical breast exam every 1–3 years.</p>'; }
+      else if(age>=30 && age<40){ msg='<p>➡ Cervical: Pap + HPV test every 5 years (if available).<br>➡ Breast: Clinical exam yearly.<br>➡ Oral check if tobacco user.</p>'; }
+      else if(age>=40 && age<50){ msg='<p>➡ Mammogram every 1–2 years depending on local guidelines.<br>➡ Cervical: Continue screening as advised.</p>'; }
+      else if(age>=50 && age<65){ msg='<p>➡ Mammogram every 1–2 years (as advised).<br>➡ Cervical: Continue screening until 65 if recommended.<br>➡ Watch for uterine/ovarian symptoms.</p>'; }
+      else{ msg='<p>➡ Follow doctor advice for mammograms & general checks. Cervical screening may stop if prior adequate negative tests.</p>'; }
+      planDiv.innerHTML = msg;
+    }
+
+    btn.addEventListener('click', buildPlan);
+    ageInput.addEventListener('keydown', function(e){ if(e.key==='Enter'){ buildPlan(); }});
+  });
+})();
+</script>
+</body>
+</html>

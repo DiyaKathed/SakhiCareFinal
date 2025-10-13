@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women's Health Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+  <nav class="navbar">
+    <div class="brand">
+      <img src="images/Sakhicarelogo.jpg" alt="SakhiCare Logo">
+      <div class="logo">Sakhi<span>Care</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#zones">Health Zones</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <h1>Empowering Women’s Health</h1>
+    <p>Awareness • Fitness • Care</p>
+    <a href="#zones" class="btn">Explore Health Zones</a>
+  </section>
+
+  <!-- Health Zones -->
+  <section id="zones">
+    <h2 class="section-title">Health Zones</h2>
+    <div class="cards">
+      <div class="card">
+        <a href="exercise.html"><img src="images/yoga.jpg"/></a>
+        <div class="card-content">
+          <h3> Exercises & Yoga</h3>
+          <p>Stay active with simple yoga postures and daily exercise tips tailored for women.</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="dietplan.html"><img src="images/diet-plan.jpg"/></a>
+        <div class="card-content">
+          <h3> Diet Plan</h3>
+          <p>Balanced diets for every age group to maintain good health and prevent deficiencies.</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="menses.html"><img src="images/menstrual-health .jpg"/></a>
+        <div class="card-content">
+          <h3> Menstrual Health</h3>
+          <p>Learn hygiene tips, cycle tracking, and safe practices during periods.</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="cancer.html"><img src="images/cancer .jpg"/></a>
+        <div class="card-content">
+          <h3> Cancer Awareness</h3>
+          <p>Understand early signs, self-examination techniques, and preventive care.</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="mentalhealth.html"><img src="images/mental-health.jpg"/></a>
+        <div class="card-content">
+          <h3> Mental Health</h3>
+          <p>Manage stress, anxiety, and emotional well-being with mindful practices.</p>
+        </div>
+      </div>
+       <div class="card">
+        <a href="skincare.html"><img src="images/skincare.jpg"></a>
+        <div class="card-content">
+          <h3> Skin Care </h3>
+          <p>Learn daily skin care tips, common problems, and natural remedies for healthy skin.</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="doctorsconnect.html"><img src="images/contact.jpg"></a> 
+        <div class="card-content">
+          <h3> Doctors Connect</h3>
+          <p>Get guidance from healthcare professionals and schedule consultations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2 class="section-title">About Us</h2>
+    <p>We are committed to empowering women with knowledge and resources to take charge of their health and well-being.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SakhiCare Team </p>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <div id="chatbot-container">
+    <button onclick="toggleChat()" id="chatbot-btn">💬 Chat with Sakhi AI</button>
+    <div id="chat-window" style="display:none;">
+      <div id="chat-header">SakhiCare Assistant</div>
+      <div id="chat-body"></div>
+      <input type="text" id="user-input" placeholder="Ask your question..." 
+             onkeypress="if(event.key==='Enter'){sendMessage()}"/>
+    </div>
+  </div>
+
+  <style>
+  #chatbot-container {
+    position: fixed; bottom: 20px; right: 20px;
+    font-family: Arial, sans-serif;
+  }
+  #chatbot-btn {
+    background: #e91e63; color: white;
+    border: none; padding: 12px 18px;
+    border-radius: 25px; cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  }
+  #chat-window {
+    width: 300px; height: 400px;
+    background: #fff; border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    overflow: hidden; display: flex;
+    flex-direction: column;
+  }
+  #chat-header {
+    background: #e91e63; color: white;
+    padding: 10px; font-weight: bold;
+  }
+  #chat-body {
+    flex: 1; padding: 10px; overflow-y: auto;
+  }
+  #user-input {
+    border: none; padding: 10px;
+    width: 100%; border-top: 1px solid #ccc;
+  }
+  </style>
+
+  <script>
+  function toggleChat() {
+    const chat = document.getElementById("chat-window");
+    chat.style.display = (chat.style.display === "none") ? "block" : "none";
+  }
+
+  async function sendMessage() {
+    let input = document.getElementById("user-input");
+    let message = input.value;
+    if (!message) return;
+    
+    let chatBody = document.getElementById("chat-body");
+    chatBody.innerHTML += `<div><b>You:</b> ${message}</div>`;
+    input.value = "";
+
+    // Call your backend AI API
+    let response = await fetch("http://localhost:5000/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: message })
+    });
+    let data = await response.json();
+
+    chatBody.innerHTML += `<div><b>SakhiCare:</b> ${data.reply}</div>`;
+  }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
